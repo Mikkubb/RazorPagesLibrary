@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesLibrary.Data;
-using RazorPagesLibrary.Pages.Models;
+using RazorPagesLibrary.Models;
 
 namespace RazorPagesLibrary.Pages.Books
 {

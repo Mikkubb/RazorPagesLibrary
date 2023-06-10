@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace RazorPagesLibrary.Pages.Models
+namespace RazorPagesLibrary.Models
 {
     public class Book
     {

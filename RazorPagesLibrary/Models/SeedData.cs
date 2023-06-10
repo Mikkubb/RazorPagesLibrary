@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RazorPagesLibrary.Data;
 
-namespace RazorPagesLibrary.Pages.Models
+namespace RazorPagesLibrary.Models
 {
     public static class SeedData
     {

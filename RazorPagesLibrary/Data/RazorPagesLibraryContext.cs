@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesLibrary.Pages.Models;
+using RazorPagesLibrary.Models;
 
 namespace RazorPagesLibrary.Data
 {
@@ -14,6 +14,6 @@ namespace RazorPagesLibrary.Data
         {
         }
 
-        public DbSet<RazorPagesLibrary.Pages.Models.Book> Book { get; set; } = default!;
+        public DbSet<Book> Book { get; set; } = default!;
     }
 }
