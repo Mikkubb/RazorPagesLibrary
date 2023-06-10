@@ -28,7 +28,8 @@ namespace RazorPagesLibrary.Models
                         Title = "The Hobbit",
                         Author = "J. R. R. Tolkien",
                         Genre = "Fantasy",
-                        Price = 7.99M
+                        Price = 7.99M,
+                        Rating = 8
                     },
 
                     new Book
@@ -36,7 +37,8 @@ namespace RazorPagesLibrary.Models
                         Title = "The Lord of the Rings",
                         Author = "J. R. R. Tolkien",
                         Genre = "Fantasy",
-                        Price = 9.99M
+                        Price = 9.99M,
+                        Rating = 9
                     },
 
                     new Book
@@ -44,7 +46,8 @@ namespace RazorPagesLibrary.Models
                         Title = "Harry Potter",
                         Author = "J. K. Rowling",
                         Genre = "Fantasy",
-                        Price = 8.99M
+                        Price = 8.99M,
+                        Rating = 9
                     },
 
                     new Book
@@ -52,7 +55,8 @@ namespace RazorPagesLibrary.Models
                         Title = "Quo vadis",
                         Author = "Henryk Sienkiewicz",
                         Genre = "Novel",
-                        Price = 10.99M
+                        Price = 10.99M,
+                        Rating = 10
                     }
                 );
                 context.SaveChanges();
