@@ -23,6 +23,11 @@ namespace RazorPagesLibrary.Pages.Books
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
             if (id == null || _context.Book == null)
             {
                 return NotFound();
