@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesLibrary.Data;
 using RazorPagesLibrary.Models;
@@ -21,12 +22,24 @@ namespace RazorPagesLibrary.Pages.Books
 
         public IList<Book> Book { get;set; } = default!;
 
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
+        public SelectList? Genres { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string? BookGenre { get; set; }
+
         public async Task OnGetAsync()
         {
-            if (_context.Book != null)
+            var books = from b in _context.Book
+                         select b;
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                Book = await _context.Book.ToListAsync();
+                books = books.Where(s => s.Title.Contains(SearchString));
             }
+
+            Book = await books.ToListAsync();
         }
     }
 }
