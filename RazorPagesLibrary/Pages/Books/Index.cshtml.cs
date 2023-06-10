@@ -32,13 +32,24 @@ namespace RazorPagesLibrary.Pages.Books
 
         public async Task OnGetAsync()
         {
+            // Use LINQ to get list of genres.
+            IQueryable<string> genreQuery = from b in _context.Book
+                                            orderby b.Genre
+                                            select b.Genre;
+
             var books = from b in _context.Book
                          select b;
+
             if (!string.IsNullOrEmpty(SearchString))
             {
                 books = books.Where(s => s.Title.Contains(SearchString));
             }
 
+            if (!string.IsNullOrEmpty(BookGenre))
+            {
+                books = books.Where(x => x.Genre == BookGenre);
+            }
+            Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
             Book = await books.ToListAsync();
         }
     }
